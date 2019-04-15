@@ -22,14 +22,9 @@ defmodule NeoSemantics.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-
-      # property graphs
       {:bolt_sips, "~> 1.5"},
-
-      # rdf graphs
-      {:sparql_client, "~> 0.2"},
-      {:hackney, "~> 1.15"}
+      {:hackney, "~> 1.15"},
+      {:tesla, "~> 1.2"}
     ]
   end
 
