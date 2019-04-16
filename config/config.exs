@@ -2,17 +2,6 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-# # HTTP client
-# config :tesla,
-#   adapter: Tesla.Adapter.Hackney
-#
-# # LPG database access
-# config :bolt_sips, Bolt,
-#   url: "bolt://neo4j:neo4jtest@localhost:7687"
-#
-# config :neo_semantics,
-#   neo4j_service: "http://neo4j:neo4jtest@localhost:7474"
-
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
