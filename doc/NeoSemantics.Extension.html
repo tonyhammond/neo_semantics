@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.20.1">
+    <meta name="project" content="neo_semantics v0.1.2">
+    <title>NeoSemantics.Extension — neo_semantics v0.1.2</title>
+    <link rel="stylesheet" href="dist/html-75c73d59b7f14fe4fa4e.css" />
+    <script src="dist/sidebar_items-7e0631d887.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-75c73d59b7f14fe4fa4e.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+neo_semantics      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.1.2
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="app-vsn">neo_semantics v0.1.2</small>
+NeoSemantics.Extension              </h1>
+
+
+        <section id="moduledoc">
+<p>Module providing simple wrapper functions for the <a href="https://github.com/jbarrasa/neosemantics"><code class="inline">neosemantics</code></a> library
+extension functions.</p>
+<p>TODO - format support</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cypher/2">cypher(cypher, show_only_mapped \\ false)</a>
+  </div>
+    <div class="summary-synopsis"><p>Produces an RDF serialization of the nodes and relationships returned by the query.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cypher_on_rdf/1">cypher_on_rdf(cypher)</a>
+  </div>
+    <div class="summary-synopsis"><p>Produces an RDF serialization of the nodes and relationships returned by the query.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#node_by_id/2">node_by_id(node_id, exclude_context \\ false)</a>
+  </div>
+    <div class="summary-synopsis"><p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_id</code>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#node_by_uri/2">node_by_uri(node_uri, exclude_context \\ false)</a>
+  </div>
+    <div class="summary-synopsis"><p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_uri</code>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#ping/0">ping()</a>
+  </div>
+    <div class="summary-synopsis"><p>Pings the Neo4j service.</p></div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="cypher/2">
+  
+    <span id="cypher/1"></span>
+  <div class="detail-header">
+    <a href="#cypher/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cypher(cypher, show_only_mapped \\ false)</span>
+          </div>
+  <section class="docstring">
+<p>Produces an RDF serialization of the nodes and relationships returned by the query.</p>
+<p>Currently only RDF Turtle is supported. Also have a problem with supporting the <code class="inline">showOnlyMapped</code> parameter.</p>
+<h2 id="cypher/2-examples" class="section-heading">
+  <a href="#cypher/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="8892538500-1">(</span><span class="s">&quot;node1.cypher&quot;</span><span class="p" data-group-id="8892538500-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="s">&quot;match (n) return n limit 1</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="w"> </span><span class="p" data-group-id="8892538500-2">(</span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">cypher</span><span class="p" data-group-id="8892538500-2">)</span><span class="w">
+</span><span class="na">@prefix</span><span class="w"> </span><span class="ss">neovoc</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">neo4j</span><span class="ss">:/</span><span class="o">/</span><span class="n">defaultvocabulary</span><span class="c1">#&gt; .</span><span class="w">
+</span><span class="na">@prefix</span><span class="w"> </span><span class="ss">neoind</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">neo4j</span><span class="ss">:/</span><span class="o">/</span><span class="n">indiv</span><span class="c1">#&gt; .</span><span class="w">
+
+
+</span><span class="n">neoind</span><span class="p">:</span><span class="mi">919</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">neovoc</span><span class="ss">:Resource</span><span class="p">;</span><span class="w">
+  </span><span class="n">neovoc</span><span class="ss">:rdfs__label</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span><span class="w">
+  </span><span class="n">neovoc</span><span class="ss">:uri</span><span class="w"> </span><span class="s">&quot;http://dbpedia.org/resource/Hello_World&quot;</span><span class="w"> </span><span class="o">.</span><span class="w">
+
+</span><span class="ss">:ok</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="cypher_on_rdf/1">
+    <div class="detail-header">
+    <a href="#cypher_on_rdf/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cypher_on_rdf(cypher)</span>
+          </div>
+  <section class="docstring">
+<p>Produces an RDF serialization of the nodes and relationships returned by the query.</p>
+<p>Currently only RDF Turtle is supported.</p>
+<h2 id="cypher_on_rdf/1-examples" class="section-heading">
+  <a href="#cypher_on_rdf/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">TestGraph.LPG</span><span class="o">.</span><span class="n">read_query</span><span class="p" data-group-id="9025991464-1">(</span><span class="s">&quot;nodes.cypher&quot;</span><span class="p" data-group-id="9025991464-1">)</span><span class="o">.</span><span class="n">data</span><span class="w">
+</span><span class="s">&quot;match (n) return distinct n</span><span class="se">\n</span><span class="s">&quot;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">cypher</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">cypher_on_rdf</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="node_by_id/2">
+  
+    <span id="node_by_id/1"></span>
+  <div class="detail-header">
+    <a href="#node_by_id/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">node_by_id(node_id, exclude_context \\ false)</span>
+          </div>
+  <section class="docstring">
+<p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_id</code>.</p>
+<p>This returns the full context unless an optional boolean arg <code class="inline">exclude_context</code>
+is passed as <code class="inline">true</code> which will exclude context if present.</p>
+<h2 id="node_by_id/2-examples" class="section-heading">
+  <a href="#node_by_id/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_id</span><span class="p" data-group-id="4276808511-1">(</span><span class="mi">1783</span><span class="p" data-group-id="4276808511-1">)</span><span class="w">
+</span><span class="s">&quot;@prefix neovoc: &lt;neo4j://defaultvocabulary#&gt; .</span><span class="se">\n</span><span class="s">@prefix neoind: &lt;neo4j://indiv#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">neoind:1783 a neovoc:Resource;</span><span class="se">\n</span><span class="s">  neovoc:ns0__creator neoind:1785;</span><span class="se">\n</span><span class="s">  neovoc:ns0__homepage neoind:1784;</span><span class="se">\n</span><span class="s">  neovoc:ns0__license neoind:1786;</span><span class="se">\n</span><span class="s">  neovoc:ns0__name &quot;</span><span class="nc">Elixir</span><span class="err">&quot;</span><span class="p">;</span></code></pre>
+<p>  neovoc:uri &quot;http://example.org/Elixir&quot; .\n&quot;</p>
+  </section>
+</section>
+<section class="detail" id="node_by_uri/2">
+  
+    <span id="node_by_uri/1"></span>
+  <div class="detail-header">
+    <a href="#node_by_uri/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">node_by_uri(node_uri, exclude_context \\ false)</span>
+          </div>
+  <section class="docstring">
+<p>Exports from Neo4j an LPG graph transformed into an RDF graph. The graph
+is centered on a node identified by <code class="inline">node_uri</code>.</p>
+<p>This returns the full context unless an optional boolean arg <code class="inline">exclude_context</code>
+is passed as <code class="inline">true</code> which will exclude context if present.</p>
+<h2 id="node_by_uri/2-examples" class="section-heading">
+  <a href="#node_by_uri/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">node_by_uri</span><span class="p" data-group-id="2473313386-1">(</span><span class="s">&quot;http://example.org/Elixir&quot;</span><span class="p" data-group-id="2473313386-1">)</span><span class="w">
+</span><span class="s">&quot;@prefix neovoc: &lt;neo4j://vocabulary#&gt; .</span><span class="se">\n</span><span class="se">\n</span><span class="se">\n</span><span class="s">&lt;http://example.org/Elixir&gt; &lt;http://example.org/creator&gt; &lt;http://dbpedia.org/resource/José_Valim&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/homepage&gt; &lt;http://elixir-lang.org&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/license&gt; &lt;http://dbpedia.org/resource/Apache_License&gt;;</span><span class="se">\n</span><span class="s">  &lt;http://example.org/name&gt; &quot;</span><span class="nc">Elixir</span><span class="s">&quot; .</span><span class="se">\n</span><span class="s">&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="ping/0">
+    <div class="detail-header">
+    <a href="#ping/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">ping()</span>
+          </div>
+  <section class="docstring">
+<p>Pings the Neo4j service.</p>
+<p>This returns a JSON confirmation that the service is up.</p>
+<h2 id="ping/0-examples" class="section-heading">
+  <a href="#ping/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">NeoSemantics.Extension</span><span class="o">.</span><span class="n">ping</span><span class="w">
+</span><span class="p" data-group-id="2787002758-1">{</span><span class="s">&quot;ping&quot;</span><span class="ss">:&quot;here!&quot;</span><span class="p" data-group-id="2787002758-1">}</span><span class="w">
+</span><span class="ss">:ok</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.20.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+
