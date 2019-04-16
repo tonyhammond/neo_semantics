@@ -15,11 +15,9 @@ defmodule NeoSemantics.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-
       {:bolt_sips, "~> 1.5"},
       {:hackney, "~> 1.15"},
       {:tesla, "~> 1.2"}
     ]
   end
-
 end

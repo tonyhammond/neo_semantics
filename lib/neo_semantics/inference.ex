@@ -28,5 +28,4 @@ defmodule NeoSemantics.Inference do
     cypher = "call semantics.inference.getRels(\"" <> rel <> "\")"
     Bolt.Sips.query!(conn, cypher)
   end
-
 end

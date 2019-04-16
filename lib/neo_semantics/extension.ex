@@ -24,7 +24,7 @@ defmodule NeoSemantics.Extension do
     base = Application.get_env(:neo_semantics, :neo4j_service)
     path = "/rdf/ping"
     {:ok, env} = Tesla.get(base <> path)
-    IO.puts env.body
+    IO.puts(env.body)
   end
 
   @doc """
@@ -44,13 +44,15 @@ defmodule NeoSemantics.Extension do
     id = Integer.to_string(node_id)
     base = Application.get_env(:neo_semantics, :neo4j_service)
     path = "/rdf/describe/id"
+
     query =
       case exclude_context do
         true -> "?nodeid=" <> id <> "&excludeContext"
         false -> "?nodeid=" <> id
       end
-      {:ok, env} = Tesla.get(base <> path <> query, headers: [{"accept", "text/turtle"}])
-      env.body
+
+    {:ok, env} = Tesla.get(base <> path <> query, headers: [{"accept", "text/turtle"}])
+    env.body
   end
 
   # @doc """
@@ -75,15 +77,16 @@ defmodule NeoSemantics.Extension do
     uri = URI.encode(node_uri)
     base = Application.get_env(:neo_semantics, :neo4j_service)
     path = "/rdf/describe/uri"
+
     query =
       case exclude_context do
         true -> "?nodeuri=" <> uri <> "&excludeContext"
         false -> "?nodeuri=" <> uri
       end
+
     {:ok, env} = Tesla.get(base <> path <> query, headers: [{"accept", "text/turtle"}])
     env.body
   end
-
 
   @doc """
   Produces an RDF serialization of the nodes and relationships returned by the query.
@@ -108,11 +111,13 @@ defmodule NeoSemantics.Extension do
   def cypher(cypher, show_only_mapped \\ false) do
     base = Application.get_env(:neo_semantics, :neo4j_service)
     path = "/rdf/cypher"
+
     data =
       case show_only_mapped do
         true -> Jason.encode!(%{"cypher" => cypher, "showOnlyMapped" => true})
         false -> Jason.encode!(%{"cypher" => cypher})
       end
+
     {:ok, env} = Tesla.post(base <> path, data, headers: [{"accept", "text/turtle"}])
     env.body
   end
@@ -137,5 +142,4 @@ defmodule NeoSemantics.Extension do
     {:ok, env} = Tesla.post(base <> path, data, headers: [{"accept", "text/turtle"}])
     env.body
   end
-
 end

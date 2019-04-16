@@ -40,19 +40,14 @@ defmodule NeoSemantics do
            "triplesLoaded" => 8
          }
        ]}
+
       iex> resp
       [
          %{
            "extraInfo" => "",
            "namespaces" => %{
              "http://purl.org/dc/elements/1.1/" => "dc",
-             "http://purl.org/dc/terms/" => "dct",
-             "http://purl.org/ontology/bibo/" => "ns0",
-             "http://schema.org/" => "sch",
-             "http://www.w3.org/1999/02/22-rdf-syntax-ns#" => "rdf",
-             "http://www.w3.org/2000/01/rdf-schema#" => "rdfs",
-             "http://www.w3.org/2002/07/owl#" => "owl",
-             "http://www.w3.org/2004/02/skos/core#" => "skos"
+             ...
            },
            "terminationStatus" => "OK",
            "triplesLoaded" => 8
@@ -66,13 +61,7 @@ defmodule NeoSemantics do
           "extraInfo" => "",
           "namespaces" => %{
             "http://purl.org/dc/elements/1.1/" => "dc",
-            "http://purl.org/dc/terms/" => "dct",
-            "http://purl.org/ontology/bibo/" => "ns0",
-            "http://schema.org/" => "sch",
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#" => "rdf",
-            "http://www.w3.org/2000/01/rdf-schema#" => "rdfs",
-            "http://www.w3.org/2002/07/owl#" => "owl",
-            "http://www.w3.org/2004/02/skos/core#" => "skos"
+             ...
           },
           "terminationStatus" => "OK",
           "triplesLoaded" => 8
@@ -86,13 +75,7 @@ defmodule NeoSemantics do
           "extraInfo" => "",
           "namespaces" => %{
             "http://purl.org/dc/elements/1.1/" => "dc",
-            "http://purl.org/dc/terms/" => "dct",
-            "http://purl.org/ontology/bibo/" => "ns0",
-            "http://schema.org/" => "sch",
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#" => "rdf",
-            "http://www.w3.org/2000/01/rdf-schema#" => "rdfs",
-            "http://www.w3.org/2002/07/owl#" => "owl",
-            "http://www.w3.org/2004/02/skos/core#" => "skos"
+             ...
           },
           "terminationStatus" => "OK",
           "triplesLoaded" => 8
@@ -106,6 +89,15 @@ defmodule NeoSemantics do
   @rdfxml "RDF/XML"
   @trig "TriG"
   @turtle "Turtle"
+
+  ##
+
+  @doc """
+  """
+  def hello(conn) do
+    cypher = "match (n) return n limit 1"
+    Bolt.Sips.query(conn, cypher)
+  end
 
   ##
 
@@ -268,5 +260,4 @@ defmodule NeoSemantics do
     cypher = "call semantics.liteOntoImport(\"" <> uri <> "\", \"" <> format <> "\")"
     Bolt.Sips.query!(conn, cypher)
   end
-
 end

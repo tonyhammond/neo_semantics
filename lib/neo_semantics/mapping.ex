@@ -29,6 +29,7 @@ defmodule NeoSemantics.Mapping do
         nil -> "call semantics.mapping.listSchemas()"
         _ -> "call semantics.mapping.listSchemas(\"" <> search_string <> "\")"
       end
+
     Bolt.Sips.query!(conn, cypher)
   end
 
@@ -44,10 +45,15 @@ defmodule NeoSemantics.Mapping do
   Creates a mapping for an element in the Neo4j DB schema to a vocabulary element.
   """
   def add_mapping_to_schema(conn, node, element1, element2) do
-    cypher = "call semantics.mapping.addMappingToSchema(\"" <> node
-    <> "\", \"" <> element1
-    <> "\", \"" <> element2
-    <> "\")"
+    cypher =
+      "call semantics.mapping.addMappingToSchema(\"" <>
+        node <>
+        "\", \"" <>
+        element1 <>
+        "\", \"" <>
+        element2 <>
+        "\")"
+
     Bolt.Sips.query!(conn, cypher)
   end
 
@@ -68,7 +74,7 @@ defmodule NeoSemantics.Mapping do
         nil -> "call semantics.mapping.listMappings()"
         _ -> "call semantics.mapping.listMappings(\"" <> search_string <> "\")"
       end
+
     Bolt.Sips.query!(conn, cypher)
   end
-
 end

@@ -8,7 +8,7 @@
     <meta name="project" content="neo_semantics v0.1.2">
     <title>NeoSemantics — neo_semantics v0.1.2</title>
     <link rel="stylesheet" href="dist/html-75c73d59b7f14fe4fa4e.css" />
-    <script src="dist/sidebar_items-7e0631d887.js"></script>
+    <script src="dist/sidebar_items-5303d512a4.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-75c73d59b7f14fe4fa4e.js"></script>
     
@@ -90,12 +90,12 @@ outcome is expected the marked form may be easier to use. (See Elixir <a href="h
 </h2>
 
 <pre><code class="nohighlight makeup elixir"><span class="c1"># simple form - import_rdf/3</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="p" data-group-id="7236027258-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">resp</span><span class="p" data-group-id="7236027258-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7236027258-2">(</span><span class="n">conn</span><span class="p" data-group-id="7236027258-3">(</span><span class="p" data-group-id="7236027258-3">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf</span><span class="p" data-group-id="7236027258-4">(</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="p" data-group-id="7236027258-4">)</span><span class="p" data-group-id="7236027258-2">)</span><span class="w">
-</span><span class="p" data-group-id="7236027258-5">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="7236027258-6">[</span><span class="w">
-   </span><span class="p" data-group-id="7236027258-7">%{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="p" data-group-id="8542340749-1">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">resp</span><span class="p" data-group-id="8542340749-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8542340749-2">(</span><span class="n">conn</span><span class="p" data-group-id="8542340749-3">(</span><span class="p" data-group-id="8542340749-3">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf</span><span class="p" data-group-id="8542340749-4">(</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="p" data-group-id="8542340749-4">)</span><span class="p" data-group-id="8542340749-2">)</span><span class="w">
+</span><span class="p" data-group-id="8542340749-5">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="8542340749-6">[</span><span class="w">
+   </span><span class="p" data-group-id="8542340749-7">%{</span><span class="w">
      </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7236027258-8">%{</span><span class="w">
+     </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8542340749-8">%{</span><span class="w">
        </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
        </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
        </span><span class="s">&quot;http://purl.org/ontology/bibo/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
@@ -104,69 +104,52 @@ outcome is expected the marked form may be easier to use. (See Elixir <a href="h
        </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
        </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
        </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-     </span><span class="p" data-group-id="7236027258-8">}</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="8542340749-8">}</span><span class="p">,</span><span class="w">
      </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
      </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w">
-   </span><span class="p" data-group-id="7236027258-7">}</span><span class="w">
- </span><span class="p" data-group-id="7236027258-6">]</span><span class="p" data-group-id="7236027258-5">}</span><span class="w">
+   </span><span class="p" data-group-id="8542340749-7">}</span><span class="w">
+ </span><span class="p" data-group-id="8542340749-6">]</span><span class="p" data-group-id="8542340749-5">}</span><span class="w">
+
 </span><span class="gp unselectable">iex&gt; </span><span class="n">resp</span><span class="w">
-</span><span class="p" data-group-id="7236027258-9">[</span><span class="w">
-   </span><span class="p" data-group-id="7236027258-10">%{</span><span class="w">
+</span><span class="p" data-group-id="8542340749-9">[</span><span class="w">
+   </span><span class="p" data-group-id="8542340749-10">%{</span><span class="w">
      </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7236027258-11">%{</span><span class="w">
+     </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8542340749-11">%{</span><span class="w">
        </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://purl.org/ontology/bibo/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://schema.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;sch&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdf&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-     </span><span class="p" data-group-id="7236027258-11">}</span><span class="p">,</span><span class="w">
+       </span><span class="n">...</span><span class="w">
+     </span><span class="p" data-group-id="8542340749-11">}</span><span class="p">,</span><span class="w">
      </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
      </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w">
-   </span><span class="p" data-group-id="7236027258-10">}</span><span class="w">
-</span><span class="p" data-group-id="7236027258-9">]</span><span class="w">
+   </span><span class="p" data-group-id="8542340749-10">}</span><span class="w">
+</span><span class="p" data-group-id="8542340749-9">]</span><span class="w">
 
 </span><span class="c1"># marked form - import_rdf!/3</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="7236027258-12">(</span><span class="p" data-group-id="7236027258-12">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="7236027258-13">(</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="p" data-group-id="7236027258-13">)</span><span class="w">
-</span><span class="p" data-group-id="7236027258-14">[</span><span class="w">
-  </span><span class="p" data-group-id="7236027258-15">%{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="8542340749-12">(</span><span class="p" data-group-id="8542340749-12">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_rdf!</span><span class="p" data-group-id="8542340749-13">(</span><span class="n">uri</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="p" data-group-id="8542340749-13">)</span><span class="w">
+</span><span class="p" data-group-id="8542340749-14">[</span><span class="w">
+  </span><span class="p" data-group-id="8542340749-15">%{</span><span class="w">
     </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7236027258-16">%{</span><span class="w">
+    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8542340749-16">%{</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://purl.org/ontology/bibo/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://schema.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;sch&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdf&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-    </span><span class="p" data-group-id="7236027258-16">}</span><span class="p">,</span><span class="w">
+       </span><span class="n">...</span><span class="w">
+    </span><span class="p" data-group-id="8542340749-16">}</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w">
-  </span><span class="p" data-group-id="7236027258-15">}</span><span class="w">
-</span><span class="p" data-group-id="7236027258-14">]</span><span class="w">
+  </span><span class="p" data-group-id="8542340749-15">}</span><span class="w">
+</span><span class="p" data-group-id="8542340749-14">]</span><span class="w">
 
 </span><span class="c1"># marked form - import_turtle!/2</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="7236027258-17">(</span><span class="p" data-group-id="7236027258-17">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_turtle!</span><span class="p" data-group-id="7236027258-18">(</span><span class="n">uri</span><span class="p" data-group-id="7236027258-18">)</span><span class="w">
-</span><span class="p" data-group-id="7236027258-19">[</span><span class="w">
-  </span><span class="p" data-group-id="7236027258-20">%{</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">conn</span><span class="p" data-group-id="8542340749-17">(</span><span class="p" data-group-id="8542340749-17">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">NeoSemantics</span><span class="o">.</span><span class="n">import_turtle!</span><span class="p" data-group-id="8542340749-18">(</span><span class="n">uri</span><span class="p" data-group-id="8542340749-18">)</span><span class="w">
+</span><span class="p" data-group-id="8542340749-19">[</span><span class="w">
+  </span><span class="p" data-group-id="8542340749-20">%{</span><span class="w">
     </span><span class="s">&quot;extraInfo&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="7236027258-21">%{</span><span class="w">
+    </span><span class="s">&quot;namespaces&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="8542340749-21">%{</span><span class="w">
       </span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dc&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;dct&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://purl.org/ontology/bibo/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;ns0&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://schema.org/&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;sch&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdf&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/2000/01/rdf-schema#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;rdfs&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/2002/07/owl#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="s">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;skos&quot;</span><span class="w">
-    </span><span class="p" data-group-id="7236027258-21">}</span><span class="p">,</span><span class="w">
+       </span><span class="n">...</span><span class="w">
+    </span><span class="p" data-group-id="8542340749-21">}</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;terminationStatus&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;triplesLoaded&quot;</span><span class="w"> </span><span class="o">=</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w">
-  </span><span class="p" data-group-id="7236027258-20">}</span><span class="w">
-</span><span class="p" data-group-id="7236027258-19">]</span></code></pre>
+  </span><span class="p" data-group-id="8542340749-20">}</span><span class="w">
+</span><span class="p" data-group-id="8542340749-19">]</span></code></pre>
         </section>
 
         <section id="summary" class="details-list">
@@ -181,6 +164,12 @@ outcome is expected the marked form may be easier to use. (See Elixir <a href="h
     <h2>
       <a href="#functions">Functions</a>
     </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#hello/1">hello(conn)</a>
+  </div>
+    <div class="summary-synopsis"></div>
+</div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#import_jsonld/2">import_jsonld(conn, uri)</a>
@@ -312,6 +301,17 @@ outcome is expected the marked form may be easier to use. (See Elixir <a href="h
             </a>
 Functions          </h1>
           <div class="functions-list">
+<section class="detail" id="hello/1">
+    <div class="detail-header">
+    <a href="#hello/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">hello(conn)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
 <section class="detail" id="import_jsonld/2">
     <div class="detail-header">
     <a href="#import_jsonld/2" class="detail-link" title="Link to this function">
